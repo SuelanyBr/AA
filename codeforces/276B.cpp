@@ -1,33 +1,31 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 int main(){
 	
+	bool list[30] = {false};
 	string PALAVRA;
+	int ListCount = 0;
+	
 	cin >> PALAVRA;
 	
-	string NOVAPALAVRA = "";
-	bool result = true;
 	
-	for(int j = PALAVRA.size()-1; j >= 0; j--){
-		NOVAPALAVRA += PALAVRA[j];
-	}
+    for (int i = 0; i < PALAVRA.length(); ++i){
+        list[PALAVRA[i]-'a'] = !list[PALAVRA[i]-'a'];
+    }
+   
+   
+    ListCount = count(list, list + sizeof(list) / sizeof(list[0]), true);
 	
-	
-	for(int i = 0; i < PALAVRA.size(); i++){
-		cout << PALAVRA[i] << endl;
-		cout << NOVAPALAVRA[i] << endl;
-		if (PALAVRA[i] != NOVAPALAVRA[i]){
-			result = false;
-		}
-	}
-	
-	if(result){
+
+	if (ListCount == 0 || (ListCount%2) == 1){
 		cout << "First" << endl;
-	}else {
+	}else{
 		cout << "Second" << endl;
 	}
-
-
+	
+	return 0;
 }
+	

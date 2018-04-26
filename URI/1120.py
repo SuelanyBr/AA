@@ -1,4 +1,3 @@
-
 while(1):
 	D,N = raw_input().split(" ")
 	NOVA = ""
