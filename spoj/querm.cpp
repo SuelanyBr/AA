@@ -19,6 +19,7 @@ int main(){
 				cout << "Teste " << i+1 << endl;
 				cout << t << endl;
 				cout << endl;
+				break;
 			 }	
 			
 		}
