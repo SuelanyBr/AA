@@ -61,8 +61,8 @@ int main(){
 	
 		cin >> E;
 		
-		ll x = g.sizeList(E);
-		cout << x+1 << endl;
+		//ll x = g.sizeList(E);
+		//cout << x+1 << endl;
 		
 	}
     return 0;
