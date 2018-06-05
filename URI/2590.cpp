@@ -1,19 +1,21 @@
 #include <iostream>
 #include <sstream>
+#define MOD 1000000007
 #define ll long long int
 using namespace std;
 
-ll pow(int number, ll p, int t){
-	if(p == 0){
-		return 1;
-	}else if(p%2 == 0){
-		return pow(number%7, p/2,t);
-	}else{
-		return number*pow(number%7,p-1);
+
+ll fast_power(ll base, ll power){
+    ll result = 1;
+    while (power > 0){
+        if (power % 2 == 1){
+            result = (result * base) % MOD;
+		}
+        power = power / 2;
+        base = (base * base) % MOD;
 	}
+    return result;
 }
-
-
 int main(){
 	
 	int T;
@@ -21,17 +23,12 @@ int main(){
 	ll value;
 	int num = 7;
 	
-	cin.tie(NULL);
-	cout.sync_with_stdio(false);
-	
 	cin >> T;
 	
 	
 	for(int i = 0; i < T; i++){
-		cin.tie(NULL);
-		cout.sync_with_stdio(false);
 		cin >> N;
-		value = pow(num,N,7);
+		value = fast_power(7, N);
 		
 		stringstream s;
 		s << value;
