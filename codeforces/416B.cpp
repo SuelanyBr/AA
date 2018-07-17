@@ -4,14 +4,13 @@ using  namespace std;
 
 int main(){
 	int m,n;
-	int result = 0;
-	int t; 
+	long t; 
 	cin >> m >> n;
 	
-    vector<int> lista(n);
+    vector<long> lista(n);
 
     while(m--){
-        
+        long result = 0;
         for(int p = 0; p < n; p++){
             cin >> t;
 			if(result < lista[p]){
