@@ -3,7 +3,6 @@
 #define MAX 99999
 using namespace std;
 
-
 int compare(const void *a, const void *b ) {
   return ( *(int*)b - *(int*)a );
 }
